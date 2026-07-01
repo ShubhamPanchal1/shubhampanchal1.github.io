@@ -6,7 +6,7 @@
 <meta name="description" content="Shubham Panchal — Business & Data Analytics Graduate Student at Wright State University. Transforming Data into Business Decisions.">
 <meta property="og:title" content="Shubham Panchal | Business & Data Analytics">
 <meta property="og:description" content="Transforming Data into Business Decisions.">
-<meta property="og:url" content="https://shubhampanchalwsu.github.io">
+<meta property="og:url" content="https://shubhampanchal1.github.io">
 <meta name="twitter:card" content="summary_large_image">
 <title>Shubham Panchal | Business & Data Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,122 +27,42 @@
   --radius: 16px;
   --radius-sm: 10px;
 }
-
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+#progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); z-index: 9999; width: 0%; transition: width 0.1s; }
 
-/* ── SCROLL PROGRESS ── */
-#progress-bar {
-  position: fixed; top: 0; left: 0; height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  z-index: 9999; width: 0%; transition: width 0.1s;
-}
+.cursor-glow { position: fixed; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%); pointer-events: none; z-index: 0; transform: translate(-50%, -50%); transition: left 0.4s ease, top 0.4s ease; }
 
-/* ── CURSOR GLOW ── */
-.cursor-glow {
-  position: fixed; width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
-  pointer-events: none; z-index: 0;
-  transform: translate(-50%, -50%);
-  transition: left 0.4s ease, top 0.4s ease;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 48px;
-  height: 68px; display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-nav.scrolled {
-  border-color: var(--border);
-  box-shadow: 0 1px 24px rgba(0,0,0,0.06);
-}
-.nav-logo {
-  font-weight: 800; font-size: 1.1rem; color: var(--secondary);
-  letter-spacing: -0.5px; text-decoration: none;
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+nav.scrolled { border-color: var(--border); box-shadow: 0 1px 24px rgba(0,0,0,0.06); }
+.nav-logo { font-weight: 800; font-size: 1.1rem; color: var(--secondary); letter-spacing: -0.5px; text-decoration: none; }
 .nav-logo span { color: var(--primary); }
 .nav-links { display: flex; gap: 8px; align-items: center; }
-.nav-links a {
-  text-decoration: none; color: var(--muted);
-  font-size: 0.875rem; font-weight: 500;
-  padding: 6px 14px; border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
-}
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 0.875rem; font-weight: 500; padding: 6px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
 .nav-links a:hover { color: var(--text); background: var(--bg2); }
-.nav-cta {
-  background: var(--primary) !important; color: #fff !important;
-  padding: 8px 18px !important; border-radius: 10px !important;
-  font-weight: 600 !important;
-}
+.nav-cta { background: var(--primary) !important; color: #fff !important; padding: 8px 18px !important; border-radius: 10px !important; font-weight: 600 !important; }
 .nav-cta:hover { background: #1d4ed8 !important; }
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding: 100px 48px 80px;
-  position: relative; overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0; overflow: hidden;
-}
-.hero-blob {
-  position: absolute; border-radius: 50%;
-  filter: blur(80px); opacity: 0.5; animation: float 8s ease-in-out infinite;
-}
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 48px 80px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 8s ease-in-out infinite; }
 .blob1 { width: 500px; height: 500px; background: rgba(37,99,235,0.08); top: -100px; right: -100px; animation-delay: 0s; }
 .blob2 { width: 400px; height: 400px; background: rgba(16,185,129,0.07); bottom: -50px; left: 10%; animation-delay: -3s; }
 .blob3 { width: 300px; height: 300px; background: rgba(37,99,235,0.05); top: 40%; left: 30%; animation-delay: -6s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-30px) scale(1.05); }
-}
-.hero-inner {
-  max-width: 1200px; margin: 0 auto; width: 100%;
-  display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center;
-  position: relative; z-index: 1;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(37,99,235,0.07); border: 1px solid rgba(37,99,235,0.15);
-  color: var(--primary); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 6px 14px; border-radius: 100px; margin-bottom: 28px;
-}
+@keyframes float { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
+.hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; position: relative; z-index: 1; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37,99,235,0.07); border: 1px solid rgba(37,99,235,0.15); color: var(--primary); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 28px; }
 .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
-.hero h1 {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 900; line-height: 1.05; letter-spacing: -2px;
-  color: var(--secondary); margin-bottom: 12px;
-}
+.hero h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -2px; color: var(--secondary); margin-bottom: 12px; }
 .hero h1 .name-highlight { color: var(--primary); }
-.hero-typing {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 600; color: var(--muted); margin-bottom: 24px;
-  min-height: 2em;
-}
+.hero-typing { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; color: var(--muted); margin-bottom: 24px; min-height: 2em; }
 .hero-typing .typed-text { color: var(--primary); }
 .cursor-blink { display: inline-block; animation: blink 1s step-end infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-.hero-tagline {
-  font-size: 1.05rem; color: var(--muted); line-height: 1.75;
-  max-width: 500px; margin-bottom: 40px;
-}
+.hero-tagline { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 500px; margin-bottom: 40px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 12px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
 .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(37,99,235,0.3); }
@@ -156,31 +76,14 @@ nav.scrolled {
 .hero-stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
 .hero-stat + .hero-stat { padding-left: 32px; border-left: 1px solid var(--border); }
 
-/* Hero right card */
-.hero-card {
-  background: var(--card); border-radius: 24px;
-  box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-  padding: 36px; position: relative; overflow: hidden;
-}
-.hero-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-}
-.hero-avatar {
-  width: 88px; height: 88px; border-radius: 20px;
-  background: linear-gradient(135deg, var(--primary), #7c3aed);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.2rem; font-weight: 900; color: white;
-  margin-bottom: 20px; letter-spacing: -1px;
-}
+.hero-card { background: var(--card); border-radius: 24px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); padding: 36px; position: relative; overflow: hidden; }
+.hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+.hero-avatar { width: 88px; height: 88px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; }
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 .hero-card-name { font-size: 1.3rem; font-weight: 800; color: var(--secondary); letter-spacing: -0.5px; }
 .hero-card-title { font-size: 0.85rem; color: var(--muted); margin-top: 4px; margin-bottom: 24px; }
 .hero-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-.tag {
-  background: var(--bg2); color: var(--muted);
-  font-size: 0.75rem; font-weight: 600; padding: 5px 12px; border-radius: 100px;
-  border: 1px solid var(--border);
-}
+.tag { background: var(--bg2); color: var(--muted); font-size: 0.75rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); }
 .tag.blue { background: rgba(37,99,235,0.08); color: var(--primary); border-color: rgba(37,99,235,0.15); }
 .tag.green { background: rgba(16,185,129,0.08); color: var(--accent); border-color: rgba(16,185,129,0.2); }
 .hero-card-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
@@ -191,60 +94,32 @@ nav.scrolled {
 .online-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-top: 20px; }
 .online-dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; animation: pulse 2s infinite; }
 
-/* ── SECTIONS ── */
 .section { padding: 100px 48px; }
 .section-alt { background: var(--bg2); }
 .container { max-width: 1100px; margin: 0 auto; }
-.section-eyebrow {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--primary); margin-bottom: 12px;
-}
-.section-title {
-  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800;
-  color: var(--secondary); letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px;
-}
+.section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin-bottom: 12px; }
+.section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--secondary); letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px; }
 .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 56px; }
 
-/* ── ABOUT ── */
 .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
 .about-text { font-size: 1rem; color: var(--muted); line-height: 1.85; }
 .about-text p + p { margin-top: 16px; }
 .about-text strong { color: var(--text); font-weight: 600; }
 .about-cards { display: flex; flex-direction: column; gap: 14px; }
-.about-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 20px 22px;
-  display: flex; align-items: center; gap: 16px;
-  box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
-}
+.about-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
 .about-card:hover { transform: translateX(6px); box-shadow: var(--shadow-lg); }
-.about-icon {
-  width: 44px; height: 44px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.25rem; flex-shrink: 0;
-  background: rgba(37,99,235,0.08);
-}
+.about-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; background: rgba(37,99,235,0.08); }
 .about-card-title { font-weight: 700; font-size: 0.9rem; color: var(--text); }
 .about-card-sub { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
 
-/* ── STATS ── */
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 64px; }
-.stat-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 28px 24px; text-align: center;
-  box-shadow: var(--shadow); transition: transform 0.2s;
-}
+.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; text-align: center; box-shadow: var(--shadow); transition: transform 0.2s; }
 .stat-card:hover { transform: translateY(-4px); }
 .stat-card-num { font-size: 2.2rem; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
 .stat-card-label { font-size: 0.82rem; color: var(--muted); margin-top: 6px; font-weight: 500; }
 
-/* ── SKILLS ── */
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.skill-group {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 28px;
-  box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
-}
+.skill-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
 .skill-group:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .skill-group-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
 .skill-group-icon { font-size: 1.4rem; }
@@ -256,30 +131,18 @@ nav.scrolled {
 .skill-bar { height: 4px; background: var(--border); border-radius: 100px; overflow: hidden; }
 .skill-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--primary), var(--accent)); width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
 
-/* ── PROJECTS ── */
 .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.project-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 20px; overflow: hidden;
-  box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s;
-}
+.project-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s; }
 .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .project-card.featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; }
-.project-img {
-  height: 200px; display: flex; align-items: center; justify-content: center;
-  font-size: 3rem; position: relative; overflow: hidden;
-}
+.project-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; overflow: hidden; }
 .project-card.featured .project-img { height: auto; min-height: 280px; }
-.project-img-bg1 { background: linear-gradient(135deg, #dbeafe, #ede9fe); }
 .project-img-bg2 { background: linear-gradient(135deg, #d1fae5, #cffafe); }
 .project-img-bg3 { background: linear-gradient(135deg, #fee2e2, #fce7f3); }
 .project-img-bg4 { background: linear-gradient(135deg, #fef9c3, #fde68a); }
 .project-img-bg5 { background: linear-gradient(135deg, #e0e7ff, #dbeafe); }
 .project-body { padding: 28px; }
-.project-tag {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--primary); margin-bottom: 10px;
-}
+.project-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; }
 .project-title { font-size: 1.1rem; font-weight: 700; color: var(--secondary); margin-bottom: 10px; letter-spacing: -0.3px; }
 .project-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
 .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
@@ -291,24 +154,14 @@ nav.scrolled {
 .proj-btn-outline { background: transparent; color: var(--muted); border: 1px solid var(--border); }
 .proj-btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
-/* ── EXPERIENCE TIMELINE ── */
 .timeline { position: relative; padding-left: 32px; }
 .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--border); border-radius: 2px; }
 .timeline-item { position: relative; padding-bottom: 48px; }
 .timeline-item:last-child { padding-bottom: 0; }
-.timeline-dot {
-  position: absolute; left: -40px; top: 6px;
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--primary); border: 3px solid var(--bg);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
-}
+.timeline-dot { position: absolute; left: -40px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary); border: 3px solid var(--bg); box-shadow: 0 0 0 3px rgba(37,99,235,0.2); }
 .timeline-dot.green { background: var(--accent); box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
 .timeline-date { font-size: 0.78rem; font-weight: 600; color: var(--primary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
-.timeline-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 24px 28px;
-  box-shadow: var(--shadow);
-}
+.timeline-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; box-shadow: var(--shadow); }
 .timeline-role { font-size: 1.05rem; font-weight: 700; color: var(--secondary); }
 .timeline-company { font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-top: 2px; margin-bottom: 14px; }
 .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -316,13 +169,8 @@ nav.scrolled {
 .timeline-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; top: 2px; }
 .timeline-bullets li strong { color: var(--text); font-weight: 600; }
 
-/* ── EDUCATION ── */
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.edu-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 20px; padding: 32px; box-shadow: var(--shadow);
-  transition: transform 0.2s; position: relative; overflow: hidden;
-}
+.edu-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; box-shadow: var(--shadow); transition: transform 0.2s; position: relative; overflow: hidden; }
 .edu-card:hover { transform: translateY(-4px); }
 .edu-card::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); }
 .edu-degree { font-size: 1.05rem; font-weight: 700; color: var(--secondary); margin-bottom: 6px; }
@@ -330,32 +178,18 @@ nav.scrolled {
 .edu-detail { font-size: 0.82rem; color: var(--muted); margin-bottom: 6px; }
 .edu-badge { display: inline-block; background: rgba(16,185,129,0.1); color: var(--accent); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-top: 8px; }
 
-/* ── CERTIFICATIONS ── */
 .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cert-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 24px;
-  display: flex; align-items: center; gap: 16px;
-  box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
-}
+.cert-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; }
 .cert-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: rgba(37,99,235,0.2); }
 .cert-logo { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
 .cert-name { font-size: 0.875rem; font-weight: 700; color: var(--text); }
 .cert-issuer { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
 
-/* ── CONTACT ── */
-.contact-wrapper {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
-}
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .contact-info h2 { font-size: 2rem; font-weight: 800; color: var(--secondary); letter-spacing: -1px; margin-bottom: 14px; }
 .contact-info p { color: var(--muted); line-height: 1.75; margin-bottom: 32px; }
 .contact-links { display: flex; flex-direction: column; gap: 12px; }
-.contact-link {
-  display: flex; align-items: center; gap: 14px;
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px 20px;
-  text-decoration: none; transition: all 0.2s;
-}
+.contact-link { display: flex; align-items: center; gap: 14px; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; text-decoration: none; transition: all 0.2s; }
 .contact-link:hover { border-color: var(--primary); background: rgba(37,99,235,0.04); transform: translateX(4px); }
 .contact-link-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(37,99,235,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
 .contact-link-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
@@ -363,28 +197,13 @@ nav.scrolled {
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-label { font-size: 0.82rem; font-weight: 600; color: var(--text); }
-.form-input, .form-textarea {
-  background: var(--bg2); border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm); padding: 12px 16px;
-  font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text);
-  outline: none; transition: border-color 0.2s;
-}
+.form-input, .form-textarea { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; }
 .form-input:focus, .form-textarea:focus { border-color: var(--primary); background: #fff; }
 .form-textarea { resize: vertical; min-height: 120px; }
-.form-btn {
-  background: var(--primary); color: #fff; border: none;
-  padding: 14px 24px; border-radius: var(--radius-sm);
-  font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;
-  cursor: pointer; transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
-}
+.form-btn { background: var(--primary); color: #fff; border: none; padding: 14px 24px; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 14px rgba(37,99,235,0.3); }
 .form-btn:hover { background: #1d4ed8; transform: translateY(-2px); }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--secondary); color: rgba(255,255,255,0.6);
-  padding: 48px; text-align: center;
-}
+footer { background: var(--secondary); color: rgba(255,255,255,0.6); padding: 48px; text-align: center; }
 .footer-inner { max-width: 700px; margin: 0 auto; }
 .footer-logo { font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; margin-bottom: 20px; }
 .footer-logo span { color: var(--primary); }
@@ -392,24 +211,12 @@ footer {
 .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
 .footer-links a:hover { color: #fff; }
 .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
-.back-to-top {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 42px; height: 42px; border-radius: 12px;
-  background: rgba(255,255,255,0.08); color: #fff;
-  border: 1px solid rgba(255,255,255,0.1);
-  cursor: pointer; margin-bottom: 28px; font-size: 1.1rem;
-  transition: background 0.2s; text-decoration: none;
-}
+.back-to-top { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; margin-bottom: 28px; font-size: 1.1rem; transition: background 0.2s; text-decoration: none; }
 .back-to-top:hover { background: rgba(255,255,255,0.15); }
 
-/* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-card { display: none; }
@@ -471,18 +278,18 @@ footer {
       </div>
       <p class="hero-tagline">Transforming Data into Business Decisions. Helping organizations solve business problems through analytics, data visualization, business intelligence, and digital marketing.</p>
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">
+        <a href="resume.pdf" download class="btn btn-primary">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg>
           Download Resume
         </a>
         <a href="#projects" class="btn btn-outline">View Projects</a>
         <a href="#contact" class="btn btn-ghost">Contact Me</a>
-        <a href="https://github.com/shubhampanchal1" target="_blank" class="btn btn-ghost">GitHub</a>
-        <a href="https://www.linkedin.com/in/shubhampanchal11" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/ShubhamPanchal1" target="_blank" class="btn btn-ghost">GitHub</a>
+        <a href="https://www.linkedin.com/in/shubhampanchal1" target="_blank" class="btn btn-ghost">LinkedIn</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num">2.6M+</div>
+          <div class="hero-stat-num">2.68M+</div>
           <div class="hero-stat-label">Campaign Impressions</div>
         </div>
         <div class="hero-stat">
@@ -497,7 +304,9 @@ footer {
     </div>
     <div class="hero-right">
       <div class="hero-card">
-        <img src="photo.jpg" alt="Shubham Panchal" style="width:88px;height:88px;border-radius:20px;object-fit:cover;object-position:top;display:block;">
+        <div class="hero-avatar">
+          <img src="photo.jpg" alt="Shubham Panchal">
+        </div>
         <div class="hero-card-name">Shubham Panchal</div>
         <div class="hero-card-title">Business & Data Analytics · Wright State University</div>
         <div class="hero-card-tags">
@@ -540,51 +349,21 @@ footer {
         <p>I'm passionate about the intersection of <strong>data science and marketing strategy</strong> — using Python, SQL, and ML to solve real business challenges and drive measurable growth.</p>
       </div>
       <div class="about-cards">
-        <div class="about-card">
-          <div class="about-icon">📊</div>
-          <div>
-            <div class="about-card-title">Business Analytics</div>
-            <div class="about-card-sub">SQL · Python · Tableau · Power BI</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🎯</div>
-          <div>
-            <div class="about-card-title">Marketing Analytics</div>
-            <div class="about-card-sub">Google Ads · Meta Ads · GA4 · A/B Testing</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🤖</div>
-          <div>
-            <div class="about-card-title">Machine Learning</div>
-            <div class="about-card-sub">Scikit-learn · Predictive Modeling · Pandas</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">📈</div>
-          <div>
-            <div class="about-card-title">Business Intelligence</div>
-            <div class="about-card-sub">KPI Dashboards · Data Visualization</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🌐</div>
-          <div>
-            <div class="about-card-title">Digital Marketing</div>
-            <div class="about-card-sub">SEO · SEM · HubSpot · SEMrush</div>
-          </div>
-        </div>
+        <div class="about-card"><div class="about-icon">📊</div><div><div class="about-card-title">Business Analytics</div><div class="about-card-sub">SQL · Python · Tableau · Power BI</div></div></div>
+        <div class="about-card"><div class="about-icon">🎯</div><div><div class="about-card-title">Marketing Analytics</div><div class="about-card-sub">Google Ads · Meta Ads · GA4 · A/B Testing</div></div></div>
+        <div class="about-card"><div class="about-icon">🤖</div><div><div class="about-card-title">Machine Learning</div><div class="about-card-sub">Scikit-learn · Predictive Modeling · Pandas</div></div></div>
+        <div class="about-card"><div class="about-icon">📈</div><div><div class="about-card-title">Business Intelligence</div><div class="about-card-sub">KPI Dashboards · Data Visualization</div></div></div>
+        <div class="about-card"><div class="about-icon">🌐</div><div><div class="about-card-title">Digital Marketing</div><div class="about-card-sub">SEO · SEM · HubSpot · SEMrush</div></div></div>
       </div>
     </div>
     <div class="stats-row reveal">
       <div class="stat-card">
-        <div class="stat-card-num" data-count="2600000" data-suffix="M+">0</div>
+        <div class="stat-card-num" data-count="268" data-suffix="M+">0</div>
         <div class="stat-card-label">Campaign Impressions</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num" data-count="20" data-suffix="%">0</div>
-        <div class="stat-card-label">CTR Improvement at EY</div>
+        <div class="stat-card-label">CTR Improvement at NetPuppys</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num" data-count="50" data-suffix="K+">0</div>
@@ -608,10 +387,7 @@ footer {
     </div>
     <div class="skills-grid reveal">
       <div class="skill-group">
-        <div class="skill-group-header">
-          <span class="skill-group-icon">💻</span>
-          <span class="skill-group-title">Programming</span>
-        </div>
+        <div class="skill-group-header"><span class="skill-group-icon">💻</span><span class="skill-group-title">Programming</span></div>
         <div class="skill-list">
           <div class="skill-item"><div class="skill-name"><span>Python</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
           <div class="skill-item"><div class="skill-name"><span>SQL</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
@@ -619,10 +395,7 @@ footer {
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-header">
-          <span class="skill-group-icon">📊</span>
-          <span class="skill-group-title">Analytics & BI</span>
-        </div>
+        <div class="skill-group-header"><span class="skill-group-icon">📊</span><span class="skill-group-title">Analytics & BI</span></div>
         <div class="skill-list">
           <div class="skill-item"><div class="skill-name"><span>Tableau</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
           <div class="skill-item"><div class="skill-name"><span>Power BI</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
@@ -631,10 +404,7 @@ footer {
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-header">
-          <span class="skill-group-icon">🎯</span>
-          <span class="skill-group-title">Marketing</span>
-        </div>
+        <div class="skill-group-header"><span class="skill-group-icon">🎯</span><span class="skill-group-title">Marketing</span></div>
         <div class="skill-list">
           <div class="skill-item"><div class="skill-name"><span>Google Ads</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
           <div class="skill-item"><div class="skill-name"><span>Meta Ads</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
@@ -655,30 +425,38 @@ footer {
       <p class="section-sub">From ML models to live ad campaigns — every project is built around measurable business impact.</p>
     </div>
     <div class="projects-grid reveal">
+
+      <!-- FEATURED PROJECT -->
       <div class="project-card featured">
-        <div class="project-img project-img-bg1">📣</div>
+        <div class="project-img" style="background:#dbeafe;padding:0;overflow:hidden;">
+          <img src="img-clicks.png" alt="Campaign Performance Chart" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;\'>📣</div>'">
+        </div>
         <div class="project-body">
-          <div class="project-tag">Digital Marketing · Featured</div>
+          <div class="project-tag">Digital Marketing · Featured · April 2025</div>
           <div class="project-title">Digital Marketing Campaign — Wright State MSLSCM</div>
-          <p class="project-desc">Managed a $1,500 paid campaign targeting Nepalese students aged 21–35. Leveraged A/B testing and mobile-first creatives to achieve exceptional reach and engagement across platforms.</p>
+          <p class="project-desc">Promoted the MSLSCM program at Wright State University to students in Kathmandu, Nepal. Managed a $1,300 budget across Google Ads, YouTube, Facebook & Instagram. Discovered 87.9% of costs came from mobile — pivoted to mobile-first strategy achieving $6.76 cost-per-conversion on the best-performing campaign.</p>
           <div class="project-stack">
             <span class="stack-tag">Google Ads</span>
+            <span class="stack-tag">YouTube Ads</span>
             <span class="stack-tag">Meta Ads</span>
             <span class="stack-tag">A/B Testing</span>
             <span class="stack-tag">UTM Tracking</span>
             <span class="stack-tag">GA4</span>
+            <span class="stack-tag">Mobile-First</span>
           </div>
-          <div style="display:flex;gap:12px;margin-bottom:16px;">
-            <div><div style="font-size:1.6rem;font-weight:900;color:var(--primary);letter-spacing:-1px;">2.6M+</div><div style="font-size:0.75rem;color:var(--muted);">Impressions</div></div>
+          <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+            <div><div style="font-size:1.6rem;font-weight:900;color:var(--primary);letter-spacing:-1px;">2.68M+</div><div style="font-size:0.75rem;color:var(--muted);">Impressions</div></div>
             <div style="padding-left:16px;border-left:1px solid var(--border)"><div style="font-size:1.6rem;font-weight:900;color:var(--primary);letter-spacing:-1px;">12K+</div><div style="font-size:0.75rem;color:var(--muted);">Clicks</div></div>
-            <div style="padding-left:16px;border-left:1px solid var(--border)"><div style="font-size:1.6rem;font-weight:900;color:var(--primary);letter-spacing:-1px;">700K+</div><div style="font-size:0.75rem;color:var(--muted);">Engagements</div></div>
+            <div style="padding-left:16px;border-left:1px solid var(--border)"><div style="font-size:1.6rem;font-weight:900;color:var(--primary);letter-spacing:-1px;">735K+</div><div style="font-size:0.75rem;color:var(--muted);">Engagements</div></div>
+            <div style="padding-left:16px;border-left:1px solid var(--border)"><div style="font-size:1.6rem;font-weight:900;color:var(--accent);letter-spacing:-1px;">$6.76</div><div style="font-size:0.75rem;color:var(--muted);">Best Cost/Conv.</div></div>
           </div>
           <div class="project-actions">
-            <a href="case-study.html" class="proj-btn proj-btn-primary">Case Study</a>
-            <a href="https://github.com/shubhampanchal1" class="proj-btn proj-btn-outline">GitHub</a>
+            <a href="https://shubhampanchal1.github.io/case-study.html" target="_blank" class="proj-btn proj-btn-primary">Case Study</a>
+            <a href="https://github.com/ShubhamPanchal1" target="_blank" class="proj-btn proj-btn-outline">GitHub</a>
           </div>
         </div>
       </div>
+
       <div class="project-card">
         <div class="project-img project-img-bg2">🤖</div>
         <div class="project-body">
@@ -687,11 +465,12 @@ footer {
           <p class="project-desc">Built ML models on 50K+ records using Scikit-learn to predict churn and identify key drivers, improving prediction accuracy by 18%.</p>
           <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">Scikit-learn</span><span class="stack-tag">Pandas</span><span class="stack-tag">SQL</span></div>
           <div class="project-actions">
-            <a href="https://github.com/shubhampanchal1" class="proj-btn proj-btn-primary">GitHub</a>
+            <a href="https://github.com/ShubhamPanchal1" target="_blank" class="proj-btn proj-btn-primary">GitHub</a>
             <a href="#" class="proj-btn proj-btn-outline">Case Study</a>
           </div>
         </div>
       </div>
+
       <div class="project-card">
         <div class="project-img project-img-bg3">📈</div>
         <div class="project-body">
@@ -700,11 +479,12 @@ footer {
           <p class="project-desc">ML models predicting ad CTR and conversion probability from historical marketing data, with Tableau dashboards tracking CTR, CPC, ROAS, and conversions.</p>
           <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">SQL</span><span class="stack-tag">Tableau</span><span class="stack-tag">Scikit-learn</span></div>
           <div class="project-actions">
-            <a href="https://github.com/shubhampanchal1" class="proj-btn proj-btn-primary">GitHub</a>
+            <a href="https://github.com/ShubhamPanchal1" target="_blank" class="proj-btn proj-btn-primary">GitHub</a>
             <a href="#" class="proj-btn proj-btn-outline">Live Demo</a>
           </div>
         </div>
       </div>
+
       <div class="project-card">
         <div class="project-img project-img-bg4">👥</div>
         <div class="project-body">
@@ -713,11 +493,12 @@ footer {
           <p class="project-desc">Built CLV prediction and customer segmentation on 50K+ records using RFM analysis to generate retention and loyalty insights with Tableau visualizations.</p>
           <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">SQL</span><span class="stack-tag">Tableau</span><span class="stack-tag">RFM Analysis</span></div>
           <div class="project-actions">
-            <a href="https://github.com/shubhampanchal1" class="proj-btn proj-btn-primary">GitHub</a>
+            <a href="https://github.com/ShubhamPanchal1" target="_blank" class="proj-btn proj-btn-primary">GitHub</a>
             <a href="#" class="proj-btn proj-btn-outline">Case Study</a>
           </div>
         </div>
       </div>
+
       <div class="project-card">
         <div class="project-img project-img-bg5">🔀</div>
         <div class="project-body">
@@ -726,11 +507,12 @@ footer {
           <p class="project-desc">Developed first-click, last-click, and multi-touch attribution models to identify high-performing acquisition channels and improve overall marketing ROI.</p>
           <div class="project-stack"><span class="stack-tag">SQL</span><span class="stack-tag">Tableau</span><span class="stack-tag">Python</span><span class="stack-tag">Attribution Modeling</span></div>
           <div class="project-actions">
-            <a href="https://github.com/shubhampanchal1" class="proj-btn proj-btn-primary">GitHub</a>
+            <a href="https://github.com/ShubhamPanchal1" target="_blank" class="proj-btn proj-btn-primary">GitHub</a>
             <a href="#" class="proj-btn proj-btn-outline">Case Study</a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -780,7 +562,7 @@ footer {
           <div class="timeline-company">Wright State University · Dayton, Ohio</div>
           <ul class="timeline-bullets">
             <li>Pursuing M.S. in Marketing Analytics & Insights, graduating December 2026</li>
-            <li>Managed <strong>$1,500 live ad campaign</strong> achieving 2.6M+ impressions and 700K+ engagements</li>
+            <li>Managed <strong>$1,300 live ad campaign</strong> achieving 2.68M+ impressions and 735K+ engagements</li>
             <li>Building ML models, marketing attribution frameworks, and CLV prediction systems</li>
             <li>Seeking <strong>full-time roles</strong> in Business Analytics, Marketing Analytics, and BI</li>
           </ul>
@@ -824,7 +606,7 @@ footer {
       <h2 class="section-title">Industry Credentials</h2>
       <p class="section-sub">Validated expertise across analytics, advertising, and marketing platforms.</p>
     </div>
-    <div class="cert-grid reveal">       <div class="cert-card">         <div class="cert-logo" style="background:rgba(234,67,53,0.1);">🎯</div>         <div><div class="cert-name">Google Ads Certification</div><div class="cert-issuer">Google</div></div>       </div>       <div class="cert-card">         <div class="cert-logo" style="background:rgba(251,188,4,0.1);">📊</div>         <div><div class="cert-name">Google Analytics (GA4)</div><div class="cert-issuer">Google</div></div>       </div>       <a href="https://www.coursera.org/account/accomplishments/records/10LUWZ3ZNPJM" target="_blank" class="cert-card" style="text-decoration:none;">         <div class="cert-logo" style="background:rgba(31,119,180,0.1);">📈</div>         <div><div class="cert-name">Advanced Data Visualization ↗</div><div class="cert-issuer">Tableau · Coursera</div></div>       </a>       <a href="https://www.coursera.org/account/accomplishments/verify/3QGXH156RVR8" target="_blank" class="cert-card" style="text-decoration:none;">         <div class="cert-logo" style="background:rgba(0,98,255,0.1);">🗄️</div>         <div><div class="cert-name">SQL for Data Science ↗</div><div class="cert-issuer">IBM · Coursera</div></div>       </a>       <div class="cert-card">         <div class="cert-logo" style="background:rgba(255,102,0,0.1);">🔍</div>         <div><div class="cert-name">Technical SEO</div><div class="cert-issuer">Semrush</div></div>       </div>       <div class="cert-card">         <div class="cert-logo" style="background:rgba(255,122,0,0.1);">🚀</div>         <div><div class="cert-name">Inbound Marketing</div><div class="cert-issuer">HubSpot</div></div>       </div>
+    <div class="cert-grid reveal">
       <div class="cert-card">
         <div class="cert-logo" style="background:rgba(234,67,53,0.1);">🎯</div>
         <div><div class="cert-name">Google Ads Certification</div><div class="cert-issuer">Google</div></div>
@@ -833,14 +615,14 @@ footer {
         <div class="cert-logo" style="background:rgba(251,188,4,0.1);">📊</div>
         <div><div class="cert-name">Google Analytics (GA4)</div><div class="cert-issuer">Google</div></div>
       </div>
-      <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/records/10LUWZ3ZNPJM" target="_blank" class="cert-card">
         <div class="cert-logo" style="background:rgba(31,119,180,0.1);">📈</div>
-        <div><div class="cert-name">Advanced Data Visualization</div><div class="cert-issuer">Tableau</div></div>
-      </div>
-      <div class="cert-card">
+        <div><div class="cert-name">Advanced Data Visualization ↗</div><div class="cert-issuer">Tableau · Coursera</div></div>
+      </a>
+      <a href="https://www.coursera.org/account/accomplishments/verify/3QGXH156RVR8" target="_blank" class="cert-card">
         <div class="cert-logo" style="background:rgba(0,98,255,0.1);">🗄️</div>
-        <div><div class="cert-name">SQL for Data Science</div><div class="cert-issuer">IBM</div></div>
-      </div>
+        <div><div class="cert-name">SQL for Data Science ↗</div><div class="cert-issuer">IBM · Coursera</div></div>
+      </a>
       <div class="cert-card">
         <div class="cert-logo" style="background:rgba(255,102,0,0.1);">🔍</div>
         <div><div class="cert-name">Technical SEO</div><div class="cert-issuer">Semrush</div></div>
@@ -872,9 +654,9 @@ footer {
             <div class="contact-link-icon">💼</div>
             <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">linkedin.com/in/shubhampanchal1</div></div>
           </a>
-          <a href="https://github.com/shubhampanchal1" target="_blank" class="contact-link">
+          <a href="https://github.com/ShubhamPanchal1" target="_blank" class="contact-link">
             <div class="contact-link-icon">🐙</div>
-            <div><div class="contact-link-label">GitHub</div><div class="contact-link-value">github.com/shubhampanchal</div></div>
+            <div><div class="contact-link-label">GitHub</div><div class="contact-link-value">github.com/ShubhamPanchal1</div></div>
           </a>
           <a href="#" class="contact-link">
             <div class="contact-link-icon">📍</div>
@@ -883,22 +665,10 @@ footer {
         </div>
       </div>
       <div class="contact-form">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="John Smith">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="john@company.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Subject</label>
-          <input type="text" class="form-input" placeholder="Job Opportunity / Project Collaboration">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about the opportunity or project..."></textarea>
-        </div>
+        <div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input" placeholder="John Smith"></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="john@company.com"></div>
+        <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-input" placeholder="Job Opportunity / Project Collaboration"></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell me about the opportunity or project..."></textarea></div>
         <button class="form-btn">Send Message →</button>
       </div>
     </div>
@@ -917,7 +687,7 @@ footer {
       <a href="#experience">Experience</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
-      <a href="https://github.com/shubhampanchal1" target="_blank">GitHub</a>
+      <a href="https://github.com/ShubhamPanchal1" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/shubhampanchal1" target="_blank">LinkedIn</a>
     </div>
     <div class="footer-copy">© 2026 Shubham Panchal · Business & Data Analytics · Wright State University · All Rights Reserved</div>
@@ -925,7 +695,6 @@ footer {
 </footer>
 
 <script>
-// Progress bar
 window.addEventListener('scroll', () => {
   const el = document.documentElement;
   const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
@@ -933,84 +702,45 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', el.scrollTop > 40);
 });
 
-// Cursor glow
 const glow = document.getElementById('cursorGlow');
-window.addEventListener('mousemove', e => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
+window.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
 
-// Typing effect
-const phrases = [
-  'Business & Data Analytics Graduate Student.',
-  'Marketing Analytics Specialist.',
-  'SQL · Python · Tableau Expert.',
-  'Transforming Data into Decisions.',
-  'Digital Marketing Strategist.',
-];
+const phrases = ['Business & Data Analytics Graduate Student.','Marketing Analytics Specialist.','SQL · Python · Tableau Expert.','Transforming Data into Decisions.','Digital Marketing Strategist.'];
 let pi = 0, ci = 0, deleting = false;
 function type() {
   const el = document.getElementById('typedText');
   const phrase = phrases[pi];
-  if (!deleting) {
-    el.textContent = phrase.slice(0, ++ci);
-    if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
-  } else {
-    el.textContent = phrase.slice(0, --ci);
-    if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-  }
+  if (!deleting) { el.textContent = phrase.slice(0, ++ci); if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; } }
+  else { el.textContent = phrase.slice(0, --ci); if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; } }
   setTimeout(type, deleting ? 40 : 75);
 }
 type();
 
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-reveals.forEach(el => revealObs.observe(el));
+const revealObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } }); }, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// Skill bars
-const bars = document.querySelectorAll('.skill-fill');
-const barObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.width = e.target.dataset.width + '%';
-      barObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-bars.forEach(b => barObs.observe(b));
+const barObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.width + '%'; barObs.unobserve(e.target); } }); }, { threshold: 0.3 });
+document.querySelectorAll('.skill-fill').forEach(b => barObs.observe(b));
 
-// Animated counters
-const counters = document.querySelectorAll('[data-count]');
 const countObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
-    const el = e.target;
-    const target = parseInt(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
-    let current = 0;
-    const step = target / 60;
+    const el = e.target; const target = parseInt(el.dataset.count); const suffix = el.dataset.suffix || '';
+    let current = 0; const step = target / 60;
     const timer = setInterval(() => {
       current = Math.min(current + step, target);
       let display = Math.floor(current);
-      if (target >= 1000000) display = (display / 1000000).toFixed(1);
-      else if (target >= 1000) display = (display / 1000).toFixed(0);
+      if (target >= 100 && suffix === 'M+') display = (display / 100).toFixed(2);
       el.textContent = display + suffix;
       if (current >= target) clearInterval(timer);
     }, 20);
     countObs.unobserve(el);
   });
 }, { threshold: 0.5 });
-counters.forEach(c => countObs.observe(c));
+document.querySelectorAll('[data-count]').forEach(c => countObs.observe(c));
 
-// Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
+  a.addEventListener('click', e => { const target = document.querySelector(a.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); } });
 });
 </script>
 </body>
